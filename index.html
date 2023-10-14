@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Dragon Game</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dragon fighter</title>
-    <link rel="stylesheet" href="script.js">
+    <link rel="stylesheet" type="text/css" href4="style.css">
 </head>
 <body>
-    
+    <h1>Dragon Game</h1>
+    <h2>Instructions</h2>
+    <p>Utilisez les boutons pour attaquer le dragon, vous soigner ou utiliser une attaque spéciale.</p>
+    <p>Le dragon vous attaquera également.</p>
+    <p>Vous gagnez si vous éliminez le dragon avant qu'il ne vous élimine.</p>
+    <div class="hearts" id="playerHearts"></div>
+    <div class="hearts" id="dragonHearts"></div>
+    <button id="attackButton">Attaquer (petite attaque mais précise )</button>
+    <button id="healButton">Se soigner ( kit de soin )</button>
+    <button id="specialAttackButton1">Attaque du chevalier du zodiaque (grosse attaque destructice)</button>
+    <button id="specialAttackButton2">Attaque spéciale IYAD ( monstrueuse ) </button>
+    <button id="specialAttackButton3">Attaque anti dragon (vise le point faible avec puissance) </button>
+    <button id="endGameButton">Terminer la partie</button>
+    <div id="log"></div>
+    <button onclick="startGame()">Commencer la partie</button>
+    <script src="script.js"></script>
 </body>
 </html>
