@@ -2,6 +2,7 @@ let playerHP = 200;
 let dragonHP = 400;
 let gameover = true;
 
+
 function log(message) {
     document.getElementById("log").innerHTML += `<p>${message}</p>`;
 }
@@ -64,7 +65,7 @@ document.getElementById("attackButton").addEventListener("click", function() {
 // Gestionnaire d'événement pour le bouton "Se soigner"
 document.getElementById("healButton").addEventListener("click", function() {
     if (!gameover && playerHP > 0) {
-        const heal = Math.floor(Math.random() * 10) + 1;
+        const heal = Math.floor(Math.random() * 40) + 1;
         playerHP += heal;
         log(`Vous vous soignez de ${heal}Hp.`);
         showstates();

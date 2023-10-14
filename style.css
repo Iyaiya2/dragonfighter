@@ -20,6 +20,13 @@ h2 {
     margin-top: 20px;
 }
 
+div p{
+    color: wh;
+    font-weight: bold;
+}
+
+
+
 button {
     background-color: #333;
     color: #fff;
