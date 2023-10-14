@@ -73,6 +73,7 @@ document.getElementById("healButton").addEventListener("click", function() {
     }
 });
 
+// Gestionnaire d'événement pour le bouton "Attaquer attaque spéciale 1"
 document.getElementById("specialAttackButton1").addEventListener("click", function() {
     if (!gameover && playerHP > 0) {
         const damage = Math.floor(Math.random() * 25) + 10;
@@ -82,6 +83,7 @@ document.getElementById("specialAttackButton1").addEventListener("click", functi
     }
 });
 
+// Gestionnaire d'événement pour le bouton "Attaquer attaque spéciale 2"
 document.getElementById("specialAttackButton2").addEventListener("click", function() {
     if (!gameover && playerHP > 0) {
         const damage = Math.floor(Math.random() * 30) + 15;
@@ -91,6 +93,7 @@ document.getElementById("specialAttackButton2").addEventListener("click", functi
     }
 });
 
+// Gestionnaire d'événement pour le bouton "Attaquer attaque spéciale 3"
 document.getElementById("specialAttackButton3").addEventListener("click", function() {
     if (!gameover && playerHP > 0) {
         const damage = Math.floor(Math.random() * 50) + 15;
@@ -100,6 +103,7 @@ document.getElementById("specialAttackButton3").addEventListener("click", functi
     }
 });
 
+// Gestionnaire d'événement pour le bouton "Fin du jeux"
 document.getElementById("endGameButton").addEventListener("click", function() {
     if (!gameover) {
         gameover = true;
