@@ -3,6 +3,10 @@ let dragonHP = 400;
 let gameover = true;
 
 
+const nom = prompt("Quel est votre pseudo ");
+document.getElementById("playerHearts").innerHTML = nom
+
+
 function log(message) {
     document.getElementById("log").innerHTML += `<p>${message}</p>`;
 }
