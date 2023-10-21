@@ -2,10 +2,8 @@ let playerHP = 200;
 let dragonHP = 400;
 let gameover = true;
 
-
-const nom = prompt("Quel est votre pseudo ");
-document.getElementById("playerHearts").innerHTML = nom
-
+const nom = prompt("Quel est votre pseudo ?");
+document.getElementById("playerHearts").innerHTML = nom;
 
 function log(message) {
     document.getElementById("log").innerHTML += `<p>${message}</p>`;
@@ -43,17 +41,8 @@ function startGame() {
         dragonHP = 400;
         showstates();
         log("La partie commence!");
-        while (!gameover) {
-            showstates();
-            playerAction();
-            dragonAttack();
-            checkGameOver();
-            if (gameover) break;
-        }
     }
 }
-
-
 
 // Gestionnaire d'événement pour le bouton "Attaquer"
 document.getElementById("attackButton").addEventListener("click", function() {
@@ -66,62 +55,56 @@ document.getElementById("attackButton").addEventListener("click", function() {
     }
 });
 
-
 // Gestionnaire d'événement pour le bouton "Se soigner"
 document.getElementById("healButton").addEventListener("click", function() {
     if (!gameover && playerHP > 0) {
         const heal = Math.floor(Math.random() * 10) + 1;
         playerHP += heal;
-        log(`Vous vous soignez de ${heal}Hp.`);
+        log(`Vous vous soignez de ${heal} HP.`);
         showstates();
         dragonAttack();
         checkGameOver();
     }
 });
 
-// Gestionnaire d'événement pour le bouton "Attaquer attaque spéciale 1"
+// Gestionnaire d'événement pour le bouton "Attaque spéciale 1"
 document.getElementById("specialAttackButton1").addEventListener("click", function() {
     if (!gameover && playerHP > 0) {
         const damage = Math.floor(Math.random() * 25) + 10;
         dragonHP -= damage;
-        log(`Vous utilisez une attaque du chevalier du zodiaque et infligez ${damage} de dégâts au dragon.`);
+        log(`Vous utilisez une attaque spéciale et infligez ${damage} de dégâts au dragon.`);
         dragonAttack();
         checkGameOver();
     }
 });
 
-// Gestionnaire d'événement pour le bouton "Attaquer attaque spéciale 2"
+// Gestionnaire d'événement pour le bouton "Attaque spéciale 2"
 document.getElementById("specialAttackButton2").addEventListener("click", function() {
     if (!gameover && playerHP > 0) {
         const damage = Math.floor(Math.random() * 30) + 15;
         dragonHP -= damage;
-        log(`Vous utilisez une attaque spéciale IYAD et infligez ${damage} de dégâts au dragon.`);
+        log(`Vous utilisez une autre attaque spéciale et infligez ${damage} de dégâts au dragon.`);
         dragonAttack();
         checkGameOver();
     }
 });
 
-// Gestionnaire d'événement pour le bouton "Attaquer attaque spéciale 3"
+// Gestionnaire d'événement pour le bouton "Attaque spéciale 3"
 document.getElementById("specialAttackButton3").addEventListener("click", function() {
     if (!gameover && playerHP > 0) {
         const damage = Math.floor(Math.random() * 50) + 15;
         dragonHP -= damage;
-        log(`Vous utilisez une attaque anti dragon et infligez ${damage} de dégâts au dragon.`);
+        log(`Vous utilisez une attaque spéciale puissante et infligez ${damage} de dégâts au dragon.`);
         dragonAttack();
         checkGameOver();
     }
 });
 
-// Gestionnaire d'événement pour le bouton "Fin du jeux"
+// Gestionnaire d'événement pour le bouton "Fin du jeu"
 document.getElementById("endGameButton").addEventListener("click", function() {
-    if (!gameover) {
-        gameover = true;
-        
-        document.getElementById("log").innerHTML = '';
-
-    }
+    gameover = true;
+    document.getElementById("log").innerHTML = '';
 });
-
 
 // JavaScript pour contrôler la lecture de la musique
 window.onload = function() {
@@ -142,8 +125,3 @@ window.onload = function() {
         }
     });
 };
-
-
-
-
-
