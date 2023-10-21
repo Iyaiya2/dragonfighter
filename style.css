@@ -45,6 +45,15 @@ button:disabled {
     margin-top: 20px;
 }
 
+
+
+audio {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+
 p {
     margin: 5px;
     font-weight: bold;

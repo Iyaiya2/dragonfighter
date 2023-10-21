@@ -58,6 +58,7 @@ document.getElementById("attackButton").addEventListener("click", function() {
         dragonHP -= damage;
         log(`Vous infligez ${damage} de dégâts au dragon.`);
         dragonAttack();
+        checkGameOver();
     }
 });
 
@@ -65,11 +66,12 @@ document.getElementById("attackButton").addEventListener("click", function() {
 // Gestionnaire d'événement pour le bouton "Se soigner"
 document.getElementById("healButton").addEventListener("click", function() {
     if (!gameover && playerHP > 0) {
-        const heal = Math.floor(Math.random() * 40) + 1;
+        const heal = Math.floor(Math.random() * 10) + 1;
         playerHP += heal;
         log(`Vous vous soignez de ${heal}Hp.`);
         showstates();
         dragonAttack();
+        checkGameOver();
     }
 });
 
@@ -80,6 +82,7 @@ document.getElementById("specialAttackButton1").addEventListener("click", functi
         dragonHP -= damage;
         log(`Vous utilisez une attaque du chevalier du zodiaque et infligez ${damage} de dégâts au dragon.`);
         dragonAttack();
+        checkGameOver();
     }
 });
 
@@ -90,6 +93,7 @@ document.getElementById("specialAttackButton2").addEventListener("click", functi
         dragonHP -= damage;
         log(`Vous utilisez une attaque spéciale IYAD et infligez ${damage} de dégâts au dragon.`);
         dragonAttack();
+        checkGameOver();
     }
 });
 
@@ -100,6 +104,7 @@ document.getElementById("specialAttackButton3").addEventListener("click", functi
         dragonHP -= damage;
         log(`Vous utilisez une attaque anti dragon et infligez ${damage} de dégâts au dragon.`);
         dragonAttack();
+        checkGameOver();
     }
 });
 
@@ -112,6 +117,28 @@ document.getElementById("endGameButton").addEventListener("click", function() {
 
     }
 });
+
+
+// JavaScript pour contrôler la lecture de la musique
+window.onload = function() {
+    var audio = document.getElementById('maMusique');
+
+    // Lecture automatique lorsque la page est chargée
+    audio.play();
+
+    // Exemple d'ajout d'un bouton de lecture personnalisé
+    var playButton = document.getElementById('playButton');
+    playButton.addEventListener('click', function() {
+        if (audio.paused) {
+            audio.play();
+            playButton.innerHTML = "Pause";
+        } else {
+            audio.pause();
+            playButton.innerHTML = "Lecture";
+        }
+    });
+};
+
 
 
 
